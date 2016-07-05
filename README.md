@@ -43,7 +43,24 @@ Welcome to visit.
 
 ## Passport-Oauth
 
-```Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more.```
+Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more.
+
+```javascript
+passport.use(new FacebookStrategy({
+    clientID: FACEBOOK_APP_ID,
+    clientSecret: FACEBOOK_APP_SECRET,
+    callbackURL: "http://www.example.com/auth/facebook/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    User.findOrCreate(..., function(err, user) {
+      if (err) { return done(err); }
+      done(null, user);
+    });
+  }
+));
+```
+The verify callback for Facebook authentication accepts accessToken, refreshToken, and profile arguments. profile will contain user profile information provided by Facebook; refer to User Profile for additional information.
+We should rewrite the callback function, So we combine our database to see if the user already exist.if not we will create and directus to the success page.
 
 ## MongoDB
 
