@@ -41,6 +41,8 @@ Welcome to visit.
 
 7.Using MongoLab cloud database to let our project can work on the internet.
 
+![Image of workflow](https://www.ibm.com/support/knowledgecenter/en/SSZSXU_6.2.2.6/com.ibm.tivoli.fim.doc_6226/config/graphic/art/OAuth2_authcode.gif)
+
 ## Passport-Oauth
 
 Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application. A comprehensive set of strategies support authentication using a username and password, Facebook, Twitter, and more.
